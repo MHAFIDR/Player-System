@@ -9,7 +9,7 @@ public class SanitySystem : MonoBehaviour
     [SerializeField] private float kecepatanPulih = 5f;
     public float CurrentSanity { get; private set; }
     public event Action<float> OnSanityChanged; 
-    [Header("Sensor Mata Sugeng")]
+    [Header("Sensor Mata Player")]
     [SerializeField] private Transform hantu;
     [SerializeField] private Transform kepalaSugeng;
     [SerializeField] private float jarakMaksimal = 15f;

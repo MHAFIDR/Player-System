@@ -1,4 +1,3 @@
-```csharp
 using UnityEngine;
 using System;
 public class SanitySystem : MonoBehaviour
@@ -15,11 +14,13 @@ public class SanitySystem : MonoBehaviour
     [SerializeField] private float jarakMaksimal = 15f;
     [SerializeField] private float sudutPandang = 70f;
     [SerializeField] private LayerMask layerHalangan;
+    
     private void Start()
     {
         CurrentSanity = 0f;
         OnSanityChanged?.Invoke(CurrentSanity);
     }
+    
     private void Update()
     {
         if (ApakahMelihatHantu())
@@ -31,6 +32,7 @@ public class SanitySystem : MonoBehaviour
             PulihWaras();
         }
     }
+    
     private bool ApakahMelihatHantu()
     {
         if (hantu == null) return false;
@@ -45,11 +47,13 @@ public class SanitySystem : MonoBehaviour
         }
         return true; 
     }
+    
     private void TambahGila()
     {
         CurrentSanity = Mathf.Min(CurrentSanity + (kecepatanGila * Time.deltaTime), maxSanity);
         OnSanityChanged?.Invoke(CurrentSanity);
     }
+    
     private void PulihWaras()
     {
         if (CurrentSanity > 0)
@@ -59,4 +63,3 @@ public class SanitySystem : MonoBehaviour
         }
     }
 }
-```
